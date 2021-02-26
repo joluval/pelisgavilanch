@@ -9,6 +9,8 @@ export class IndiceGenerosComponent implements OnInit {
 
   constructor() { }
 
+  nombre = "Jorge Valderrama";
+
   ngOnInit(): void {
   }
 
