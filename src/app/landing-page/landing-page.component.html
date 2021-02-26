@@ -1,0 +1,24 @@
+    <!-- <div>
+        <input type="text" (input)="title = $event.target.value"/>
+    </div>
+
+    <div>
+        <input type="checkbox" checked (change)="ocultar = !ocultar"> Ocultar
+    </div>
+    <app-ciclo-vida *ngIf="ocultar" [nombre]="title"></app-ciclo-vida> -->
+
+    <h3>Listado de Películas</h3>
+
+    <!-- <app-rating></app-rating> -->
+    <!-- (marcador)="manejarVoto($event)" -->
+
+    <app-listado-peliculas [peliculas] = "peliculasEnCines"></app-listado-peliculas>
+
+    <h3>Peliculas en estreno</h3>
+
+    <app-listado-peliculas [peliculas] = "peliculasEstreno"></app-listado-peliculas>
+
+
+<!-- <input type="file" #cargador style="display: none;">
+
+<button (click)="cargador.click()">Imagen</button> -->

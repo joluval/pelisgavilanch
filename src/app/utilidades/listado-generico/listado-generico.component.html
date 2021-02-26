@@ -1,0 +1,25 @@
+<div *ngIf="!listado">
+    <span #cargando>
+        <!-- Variable de referencia de planitlla -->
+        <!--Bloque de Código para mostrar un mensaje personalizado,
+            enviado por el usuario, en caso de no haber, se muestra el por 
+            defecto.-->
+        <ng-content select="[cargando]"></ng-content>
+    </span>
+    <span *ngIf="!cargando.innerHTML.trim()">
+        <img src="https://pa1.narvii.com/6707/510b0daee67fbc091f14b9d8ef40aeb6c0d4dc7d_hq.gif" width=150px>
+    </span>
+</div>
+
+<div *ngIf="listado?.length == 0">
+    <span #vacio>
+        <ng-content select="[vacio]"></ng-content><!-- Variable de referencia de planitlla -->
+    </span>
+    <span *ngIf="!vacio.innerHTML.trim()">
+        <p>No hay películas para mostrar </p>
+    </span>
+</div>
+
+<ng-container *ngIf="listado && listado.length > 0" >
+    <ng-content select="[contenido]"></ng-content>
+</ng-container>
