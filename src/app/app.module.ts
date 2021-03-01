@@ -12,6 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { IndiceGenerosComponent } from './generos/indice-generos/indice-generos.component';
 import { CrearGeneroComponent } from './generos/crear-genero/crear-genero.component';
+import { IndiceActoresComponent } from './actores/indice-actores/indice-actores.component';
+import { CrearActorComponent } from './actores/crear-actor/crear-actor.component';
+import { CrearPeliculaComponent } from './peliculas/crear-pelicula/crear-pelicula.component';
+import { CrearCineComponent } from './cines/crear-cine/crear-cine.component';
+import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.component';
 //import { CicloVidaComponent } from './ciclo-vida/ciclo-vida.component';
 
 @NgModule({
@@ -24,6 +29,11 @@ import { CrearGeneroComponent } from './generos/crear-genero/crear-genero.compon
     LandingPageComponent,
     IndiceGenerosComponent,
     CrearGeneroComponent,
+    IndiceActoresComponent,
+    CrearActorComponent,
+    CrearPeliculaComponent,
+    CrearCineComponent,
+    IndiceCinesComponent,
     //CicloVidaComponent,
 
   ],
