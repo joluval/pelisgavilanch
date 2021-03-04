@@ -7,6 +7,7 @@ import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
+import { ReactiveFormsModule} from '@angular/forms';
 import { RatingComponent } from './utilidades/rating/rating.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -17,6 +18,11 @@ import { CrearActorComponent } from './actores/crear-actor/crear-actor.component
 import { CrearPeliculaComponent } from './peliculas/crear-pelicula/crear-pelicula.component';
 import { CrearCineComponent } from './cines/crear-cine/crear-cine.component';
 import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.component';
+import { EditarActorComponent } from './actores/editar-actor/editar-actor.component';
+import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
+import { EditarGeneroComponent } from './generos/editar-genero/editar-genero.component';
+import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component';
+
 //import { CicloVidaComponent } from './ciclo-vida/ciclo-vida.component';
 
 @NgModule({
@@ -34,6 +40,10 @@ import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.componen
     CrearPeliculaComponent,
     CrearCineComponent,
     IndiceCinesComponent,
+    EditarActorComponent,
+    EditarCineComponent,
+    EditarGeneroComponent,
+    EditarPeliculaComponent,
     //CicloVidaComponent,
 
   ],
@@ -42,6 +52,7 @@ import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.componen
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

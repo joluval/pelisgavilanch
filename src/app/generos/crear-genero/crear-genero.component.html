@@ -1,6 +1,24 @@
-<button 
+<!-- <button 
     mat-flat-button 
     color="primary" 
     type="button" 
     (click)="guardarCambios()">Grabar
-</button>
+</button> -->
+<h2>Crear Genero</h2>
+<form (submit)='guardarCambios()' [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre*</mat-label>
+        <input formControlName="nombre" matInput>
+        <mat-error *ngIf="form.invalid">{{getErrorCampoNombre()}}</mat-error>
+    </mat-form-field>
+    <div>
+        <!-- [disabled]=Binding de propiedad "evaluar si se aplica de acuerdo 
+        a una condicion de JS" -->
+        <button mat-flat-button color="primary" [disabled]="form.invalid">
+            Guardar Cambios
+        </button>
+        <a mat-stroked-button routerLink="/generos">
+            Cancelar
+        </a>
+    </div>
+</form>
