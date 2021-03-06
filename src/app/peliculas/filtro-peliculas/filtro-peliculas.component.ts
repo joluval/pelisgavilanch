@@ -15,8 +15,14 @@ export class FiltroPeliculasComponent implements OnInit {
   generos = [
     {id:1, nombre:'Acción'},
     {id:2, nombre:'Drama'},
-    {id:3, nombre:'Comedio'},
+    {id:3, nombre:'Comedia'},
   ];
+
+  peliculas = [
+    {peliculaId:1, nombre:'Titanic', generoId:[2], proximosEstrenos:true, enCines:true, imagen: 'https://media.istockphoto.com/photos/titanic-and-iceberg-picture-id503132519'},
+    {peliculaId:1, nombre:'Spider-man', generoId:[1], proximosEstrenos:true, enCines:false, imagen: 'https://media.istockphoto.com/photos/cosplayer-dressed-as-spiderman-from-marvel-picture-id619272790?s=612x612'},
+    {peliculaId:1, nombre:'Rambo', generoId:[1,3], proximosEstrenos:false, enCines:false, imagen: 'https://static1.abc.es/media/play/2019/08/28/stallone-rambo-1-3-kp3E--620x349@abc.jpg'},
+  ]
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -25,6 +31,11 @@ export class FiltroPeliculasComponent implements OnInit {
       proximosEstrenos: false,
       enCines: false,
     });
+
+    this.form.valueChanges
+      .subscribe(valores => {
+        console.log(valores);
+      });
   }
 
   limpiar(){
