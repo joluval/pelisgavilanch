@@ -24,21 +24,33 @@ export class FiltroPeliculasComponent implements OnInit {
     {peliculaId:1, nombre:'Rambo', generoId:[1,3], proximosEstrenos:false, enCines:false, imagen: 'https://static1.abc.es/media/play/2019/08/28/stallone-rambo-1-3-kp3E--620x349@abc.jpg'},
   ]
 
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      titulo: '',
-      generoId: 0,
-      proximosEstrenos: false,
-      enCines: false,
-    });
+  peliculasOriginal = this.peliculas;
 
-    this.form.valueChanges
-      .subscribe(valores => {
-        console.log(valores);
+  formularioOriginal = {
+    nombre: '',
+    generoId: 0,
+    proximosEstrenos: false,
+    enCines: false,
+  };
+  ngOnInit(): void {
+    this.form = this.formBuilder.group(this.formularioOriginal);
+    this.form.valueChanges.subscribe(valores => {
+        //console.log(valores);
+        this.peliculas = this.peliculasOriginal;
+        this.buscarPelicula(valores);
       });
   }
 
+  buscarPelicula(valores: any){
+    if (valores.nombre){
+      this.peliculas = this.peliculas.filter(pelicula => pelicula.nombre.indexOf(valores.nombre) !== -1);
+    }
+    if (valores.generoId){
+      this.peliculas = this.peliculas.filter(pelicula => pelicula.generoId.indexOf(valores.generoId) !== -1);
+    }
+  }
+
   limpiar(){
-    
+    this.form.patchValue(this.formularioOriginal);
   }
 }
